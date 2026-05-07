@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MADURITO'S HOUSE</title>
+    <link rel="icon" href="Images/MADURITOSNEWLOGO-Photoroom.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Gruesa+Libre&family=Bubbler+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+    <img src="Images/MADURITOSNEWLOGO-Photoroom.png" alt="Madurito's House Logo" class="logo" />
+    <h1 class="title" data-i18n="title">HONEY BURGERS</h1>
+
+    <nav class="nav-desktop">
+      <a href="index.html" class="nav-link" data-i18n="home">Home</a>
+      <a href="menu.html" class="nav-link" data-i18n="menu">Menu</a>
+    </nav>
+
+    <div class="hamburger" onclick="toggleMobileMenu()">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <nav id="mobile-menu" class="nav-mobile hidden">
+      <a href="index.html" data-i18n="home">Home</a>
+      <a href="menu.html" data-i18n="menu">Menu</a>
+    </nav>
+  </header>
+
+  <div class="content-wrapper">
+    <div class="left-column">
+      <img src="Images/COLOMBIA.jpeg" alt="Colombia" />
+    </div>
+
+    <div class="right-column">
+      <h1 class="title" data-i18n="social_media">SOCIAL MEDIA</h1>
+      <ul id="socialmedia">
+        <li>
+          <img src="Images/tiktok.webp" alt="TikTok" class="icon" />
+          <a href="https://www.tiktok.com/@maduritoshouse?_r=1&_t=ZS-93IXhvHujOS" target="_blank">@maduritoshouse</a>
+        </li>
+        <li>
+          <img src="Images/instagram.jpg" alt="Instagram" class="icon" />
+          <a href="https://www.instagram.com/maduritoshouse?igsh=OWs2dHY0N3c3cGI2&utm_source=qr" target="_blank">@maduritoshouse</a>
+        </li>
+        <li>
+          <img src="Images/Whatsapp.png" alt="WhatsApp" class="icon" />
+          <a href="https://wa.me/+16472351328" target="_blank">+1 (647)295-1328</a>
+        </li>
+        <li>
+          <img src="Images/email.webp" alt="Correo" class="icon" />
+          <a href="mailto:maduritoshouse.honeyfood@outlook.com">maduritoshouse.honeyfood@outlook.com</a>
+        </li>
+      </ul>
+
+      <table>
+        <caption class="subtitle" data-i18n="opening_hours">Horarios de Apertura</caption>
+        <thead>
+          <tr>
+            <th data-i18n="day">Día</th>
+            <th data-i18n="open_time">Hora de Apertura</th>
+            <th data-i18n="close_time">Hora de Cierre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-dia="Viernes" class="highlight">
+            <td data-i18n="friday">Viernes</td>
+            <td>5:00 PM</td>
+            <td>11:00 PM</td>
+          </tr>
+          <tr data-dia="Sábado">
+            <td data-i18n="saturday">Sábado</td>
+            <td>5:00 PM</td>
+            <td>11:00 PM</td>
+          </tr>
+          <tr data-dia="Domingo" class="highlight">
+            <td data-i18n="sunday">Domingo</td>
+            <td>5:00 PM</td>
+            <td>11:00 PM</td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="estado-horario" class="estado-horario"></div>
+    </div>
+  </div>
+
+  <section class="ubicacion">
+    <h2 data-i18n="location">📍 Nuestra Ubicación</h2>
+    <p data-i18n="location_text">Encuéntranos en el corazón de Toronto. ¡Ven a visitarnos!</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5763.292500654737!2d-79.4220289880967!3d43.75944224543204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2d7c2b7a13cd%3A0xd89544154be28d34!2s173%20Sheppard%20Ave%20W%2C%20North%20York%2C%20ON%20M2N%201M9!5e0!3m2!1ses-419!2sca!4v1749055995611!5m2!1ses-419!2sca" 
+     width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"></iframe>
+  </section>
+
+  <footer>
+    © 2025 <span>MADURITO'S HOUSE</span> | <span data-i18n="footer_text">Comida callejera colombiana en Toronto | Hecho con ❤️ por emprendedores</span>
+  </footer>
+  <script src="language.js"></script>
+<script>
+  function toggleMobileMenu() {
+    document.getElementById("mobile-menu").classList.toggle("hidden");
+  }
+
+  function updateHorario(lang) {
+    const estadoDiv = document.getElementById("estado-horario");
+    if (!estadoDiv) return;
+
+    const textos = translations[lang]?.estado || translations.es.estado;
+
+    const diasSemana = [
+      "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"
+    ];
+
+    const diaActual = diasSemana[new Date().getDay()];
+
+    const horarios = {
+      "Viernes": { apertura: "17:00", cierre: "23:00" },
+      "Sábado": { apertura: "17:00", cierre: "23:00" },
+      "Domingo": { apertura: "17:00", cierre: "23:00" },
+    };
+
+    estadoDiv.className = "estado-horario";
+
+    if (!horarios[diaActual]) {
+      estadoDiv.textContent = textos.cerradoHoy;
+      estadoDiv.classList.add("cerrado");
+      return;
+    }
+
+    const ahora = new Date();
+    const [hA, mA] = horarios[diaActual].apertura.split(":");
+    const [hC, mC] = horarios[diaActual].cierre.split(":");
+
+    const apertura = new Date(
+      ahora.getFullYear(), ahora.getMonth(), ahora.getDate(), hA, mA
+    );
+    const cierre = new Date(
+      ahora.getFullYear(), ahora.getMonth(), ahora.getDate(), hC, mC
+    );
+
+    if (ahora < apertura) {
+      estadoDiv.textContent = textos.proximamente;
+      estadoDiv.classList.add("proximamente");
+    } else if (ahora < cierre) {
+      estadoDiv.textContent = textos.abierto;
+      estadoDiv.classList.add("abierto");
+    } else {
+      estadoDiv.textContent = textos.cerrado;
+      estadoDiv.classList.add("cerrado");
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    updateHorario(currentLang);
+  });
+</script>
+
+
+
+
+
+</body>
+</html>

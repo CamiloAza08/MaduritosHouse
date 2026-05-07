@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MADURITO'S HOUSE</title>
+        <link rel="icon" href="Images/MADURITOSNEWLOGO-Photoroom.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Averia+Gruesa+Libre&family=Bubbler+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header class="header">
+  <img src="Images/MADURITOSNEWLOGO-Photoroom.png" alt="Logo de Honey Food" class="logo" />
+  <h1 class="title" data-i18n="title">HONEY BURGERS</h1>
+
+  <!-- Navegación visible en escritorio -->
+  <nav class="nav-desktop">
+    <a href="index.html" class="nav-link" data-i18n="home">Home</a>
+    <a href="aboutus.html" class="nav-link" data-i18n="about_us">Redes Sociales</a>
+  </nav>
+
+  <!-- Menú hamburguesa (visible solo en móvil) -->
+  <div class="hamburger" onclick="toggleMobileMenu()">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+  <nav id="mobile-menu" class="nav-mobile hidden">
+    <a href="index.html" data-i18n="home">Home</a>
+    <a href="aboutus.html" data-i18n="about_us">Redes Sociales</a>
+  </nav>
+</header>
+
+<!-- Contenedor principal de productos -->
+<div class="filtro-menu">
+  <input type="text" id="buscador" data-i18n="search_placeholder" placeholder="" />
+</div>
+
+<div class="container">
+    <!-- Producto 1 -->
+  <div class="product-card">
+    <h3 data-i18n="product_empanadas">Empanadas</h3>
+    <img src="Images/EMPANADAS_IA.jpeg" alt="Empanadas" />
+    <p data-i18n="desc_empanadas">Empanadas de harina de trigo rellenas de una mezcla de carne molida, huevo y arroz.</p>
+    <button class="add-to-cart" data-product="Empanadas" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+  <!-- Producto 2 -->
+  <div class="product-card">
+    <h3 data-i18n="product_arepa_choclo">Arepa de Choclo</h3>
+    <img src="Images/AREPACHOCLO_IA.jpeg" alt="Arepa de Choclo" />
+    <p data-i18n="desc_arepa_choclo">Deliciosa arepa de maiz dulce con queso, ideal para acompañar tu comida.</p>
+    <button class="add-to-cart" data-product="Arepa de Choclo" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+  <!-- Producto 3 -->
+  <div class="product-card">
+    <h3 data-i18n="product_chicharron_arepa">Chicharron con Arepa</h3>
+    <img src="Images/CHICHARRONCONAREPA_IA.jpeg" alt="Chicharron con Arepa" />
+    <p data-i18n="desc_chicharron_arepa">Exquisitos chicharrones preparados al mejor estilo colombiano acompañado de arepa de maiz blanco.</p>
+    <button class="add-to-cart" data-product="Chicharron con Arepa" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+  <!-- Producto 4 -->
+  <div class="product-card">
+    <h3 data-i18n="product_chicharronguacamole">Chicharron con Guacamole</h3>
+    <img src="Images/ChicharronGuacamoleMH.jpeg" alt="Chicharron con Guacamole" />
+    <p data-i18n="desc_chicharronguacamole">Exquisito corte de chicharron acompañado de guacamole cremoso.</p>
+    <button class="add-to-cart" data-product="Chicharron con Guacamole" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+  <!-- Producto 5 -->
+  <div class="product-card">
+    <h3 data-i18n="product_papas_chorreadas">Papas Chorreadas</h3>
+    <img src="Images/PAPASCHORREADASMH.jpeg" alt="Papas Chorreadas" />
+    <p data-i18n="desc_papas_chorreadas">Papas cocidas bañadas en exquisito hogao Colombiano.</p>
+    <button class="add-to-cart" data-product="Papas Chorreadas" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+  <!-- Producto 6 -->
+  <div class="product-card">
+    <h3 data-i18n="product_arepa_blanca">Arepa Blanca Grande</h3>
+    <img src="Images/AREPAGRANDE_IA.jpeg" alt="Arepa Blanca Grande" />
+    <p data-i18n="desc_arepa_blanca">Arepa de maiz blanco cocida a la plancha.</p>
+    <button class="add-to-cart" data-product="Arepa Blanca Grande" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+  <!-- Producto 7 -->
+  <div class="product-card">
+    <h3 data-i18n="product_arepa_queso">Arepa con Queso</h3>
+    <img src="Images/Arepas-con-Queso-Recipe-S4.jpg" alt="Arepa con Queso" />
+    <p data-i18n="desc_arepa_queso">Arepa de maiz blanco rellena de queso cocida a la plancha.</p>
+    <button class="add-to-cart" data-product="Arepa Blanca con Queso" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+  <!-- Producto 8 -->
+  <div class="product-card">
+    <h3 data-i18n="product_patacon">Canasta de Chicharron</h3>
+    <img src="Images/CANASTACHICHARRON_IA.jpeg" alt="Canasta de Chicharron" />
+    <p data-i18n="desc_patacon">Canasta de patacon frito acompañado de guacamole cremoso y delicioso corte de chicharron.</p>
+    <button class="add-to-cart" data-product="Canasta de Chicharron" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+  <!-- Producto 9 -->
+  <div class="product-card">
+    <h3 data-i18n="product_madurochicharronado">Maduro Chicharronado</h3>
+    <img src="Images/MADUROCHICHARRONADO_IA.jpeg" alt="Maduro Chicharronado" />
+    <p data-i18n="desc_madurochicharronado">Delicioso maduro frito con guacamole, maiz y corte exquisito de chicharron.</p>
+    <button class="add-to-cart" data-product="Maduro Chicharronado" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+  <!-- Producto 10 -->
+  <div class="product-card">
+    <h3 data-i18n="product_maduromixto">Maduro Mixto</h3>
+    <img src="Images/MADUROMIXTO_IA.jpeg" alt="Maduro Mixto" />
+    <p data-i18n="desc_maduromixto">Delicioso maduro frito acompañado con queso salado, pollo desmechado, cebolla caramelizada, tocineta de cerdo, maiz y salsas al gusto.</p>
+    <button class="add-to-cart" data-product="Maduro Mixto" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+  <!-- Producto 11 -->
+  <div class="product-card">
+    <h3 data-i18n="product_madurito">Madurito</h3>
+    <img src="Images/MADUROCONQUESO_IA.jpeg" alt="Madurito" />
+    <p data-i18n="desc_madurito">Maduro frito con crema y queso salado.</p>
+    <button class="add-to-cart" data-product="Madurito" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+  <!-- Producto 12 -->
+  <div class="product-card">
+    <h3 data-i18n="product_alitas">Alitas</h3>
+    <img src="Images/ALITAS_IA.jpeg" alt="Alitas" />
+    <p data-i18n="desc_alitas">Alitas de pollo fritas bañadas en salsa BBQ acompañados con papas a la francesa.</p>
+    <button class="add-to-cart" data-product="Alitas" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+  <!-- Producto 13 -->
+  <div class="product-card">
+    <h3 data-i18n="product_perro_especial">Perro Especial</h3>
+    <img src="Images/PERROESPECIAL_IA.jpeg" alt="Perro Especial" />
+    <p data-i18n="desc_perro_especial">Delicioso perro caliente con guacamole cremoso, maiz con queso y chicharron, acompañado con papas fritas y salsas al gusto.</p>
+    <button class="add-to-cart" data-product="Perro Especial" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+  <!-- Producto 14 -->
+  <div class="product-card">
+    <h3 data-i18n="product_perro_loco">Perro Loco</h3>
+    <img src="Images/PERROLOCO_IA.jpeg" alt="Perro Loco" />
+    <p data-i18n="desc_perro_loco">Delicioso perro caliente con mayosena, pollo desmechado, queso salado, maiz, tocineta, acompañado de papas fritas y salsas al gusto.</p>
+    <button class="add-to-cart" data-product="Perro Loco" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+  <!-- Producto 15 -->
+  <div class="product-card">
+    <h3 data-i18n="product_desgranado">Desgranado</h3>
+    <img src="Images/DESGRANADO_IA.jpeg" alt="Desgranado" />
+    <p data-i18n="desc_desgranado">Deliciosa mezcla entre papas fritas, cebolla caramelizada, maiz tierno, queso salado, pollo desmechado, chicharron y salsas al gusto.</p>
+    <button class="add-to-cart" data-product="Desgranado" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+  <!-- Producto 16 -->
+  <div class="product-card">
+    <h3 data-i18n="product_salsa_tartara">Salsa Tártara</h3>
+    <img src="Images/TARTARA_IA.jpeg" alt="Salsa Tártara" />
+    <p data-i18n="desc_salsa_tartara">Deliciosa salsa tartara tradicional casera.</p>
+    <button class="add-to-cart" data-product="Salsa Tártara" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+  <!-- Producto 17 -->
+  <div class="product-card">
+    <h3 data-i18n="product_salsa_pina">Salsa de Piña</h3>
+    <img src="Images/piña.jpg" alt="Salsa de Piña" />
+    <p data-i18n="desc_salsa_pina">Salsa de piña fresca, el toque dulce perfecto para tus platos.</p>
+    <button class="add-to-cart" data-product="Salsa de Piña" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+  <!-- Producto 18 -->
+  <div class="product-card">
+    <h3 data-i18n="product_aji">Aji</h3>
+    <img src="Images/AJI_IA.jpeg" alt="Aji" />
+    <p data-i18n="desc_aji">Delicioso y tipico aji colombiano perfecto para acompañar tus comidas.</p>
+    <button class="add-to-cart" data-product="Aji" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+  <!-- Producto 19 -->
+  <div class="product-card">
+    <h3 data-i18n="product_hogao">Hogao</h3>
+    <img src="Images/HOGAO_IA.jpeg" alt="Hogao" />
+    <p data-i18n="desc_hogao">Salsa tradicional colombiana a base de tomate y cebolla.</p>
+    <button class="add-to-cart" data-product="Hogao" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+  <!-- Producto 20 -->
+  <div class="product-card">
+    <h3 data-i18n="product_sodas">Sodas</h3>
+    <img src="Images/SODAS_IA.jpeg" alt="Sodas" />
+    <p data-i18n="desc_sodas">Colombiana, Coca Cola y Manzana Postobon.</p>
+    <button class="add-to-cart" data-product="Sodas" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+   <!-- Producto 21 -->
+  <div class="product-card">
+    <h3 data-i18n="product_limonada">Limonada de Panela</h3>
+    <img src="Images/LIMONADAPANELA_IA.jpeg" alt="Limonada de Panela" />
+    <p data-i18n="desc_limonada">Bebida refrescante y tradicional colombiana.</p>
+    <button class="add-to-cart" data-product="Limonada de Panela" data-i18n="add_to_cart">Agregar al carrito</button>
+  </div>
+
+</div>
+
+<!-- Panel flotante del carrito -->
+<div id="cart-panel">
+  <button class="close-cart" onclick="cerrarCarrito()" aria-label="Cerrar carrito">×</button>
+  <h3 data-i18n="your_order">Tu pedido</h3>
+  <ul id="cart-items"></ul>
+  <button class="btn-enviar" onclick="enviarPedido()" data-i18n="send_order">Enviar pedido por WhatsApp</button>
+  <button class="btn-enviar" onclick="vaciarCarrito()" data-i18n="empty_cart">🗑️ Vaciar carrito</button>
+</div>
+
+<!-- Botón flotante del carrito -->
+<div id="cart-button" onclick="abrirCarrito()" aria-label="Abrir carrito">
+  🛒 <span id="cart-count">0</span>
+</div>
+
+<!-- Botón volver arriba -->
+<button id="scrollTopBtn" aria-label="Volver arriba" >🔝</button>
+
+<footer>
+    © 2025 <span>MADURITO'S HOUSE</span> | <span data-i18n="footer_text">Comida callejera colombiana en Toronto | Hecho con ❤️ por emprendedores</span>
+  </footer>
+
+  <!-- Modal selección de soda -->
+<div id="soda-modal" class="soda-modal hidden">
+  <div class="soda-modal-content">
+
+    <h2 data-i18n="escoger_soda">Escoge tu soda</h2>
+
+    <div class="soda-options">
+
+      <button class="soda-option" data-soda="Manzana Postobon">
+        <img src="Images/MANZANA_IA.jpeg" alt="Manzana Postobon">
+        <span>Manzana Postobon</span>
+      </button>
+
+      <button class="soda-option" data-soda="Colombiana">
+        <img src="Images/COLOMBIANA_IA.jpeg" alt="Colombiana">
+        <span>Colombiana</span>
+      </button>
+
+      <button class="soda-option" data-soda="Coca Cola">
+        <img src="Images/COCA-COLA_IA.jpeg" alt="Coca Cola">
+        <span>Coca Cola</span>
+      </button>
+
+    </div>
+
+    <button data-i18n="cancelar_soda" class="close-soda">Cancelar</button>
+
+  </div>
+</div>
+
+<script src="language.js"></script>
+
+<!-- Script principal -->
+<script>
+fetch('stock.json')
+  .then(res => res.json())
+  .then(stock => {
+    const buttons = document.querySelectorAll('.add-to-cart');
+    buttons.forEach(button => {
+      const productName = button.getAttribute('data-product');
+      if (stock.hasOwnProperty(productName) && !stock[productName]) {
+        const productCard = button.closest('.product-card');
+        if (productCard) {
+          productCard.classList.add('sold-out');
+
+          // Usamos tu language.js / translations
+          const textoAgotado = translations[currentLang]?.sold_out || "Sold Out";
+          productCard.dataset.status = textoAgotado;
+        }
+
+        // Opcional: también puedes cambiar el botón
+        button.textContent = translations[currentLang]?.sold_out || "Sold Out";
+        button.disabled = true;
+      }
+    });
+  })
+  .catch(err => console.error('Error cargando stock:', err));
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cart = [];
+  const precios = {
+    "Empanadas": 3.5,
+    "Arepa de Choclo": 9.0,
+    "Chicharron con Arepa": 11.0,
+    "Chicharron con Guacamole":14.5,
+    "Papas Chorreadas": 8.0,
+    "Arepa Blanca Grande":2.0,
+    "Arepa Blanca con Queso":2.0,
+    "Canasta de Chicharron": 15.0,
+    "Maduro Chicharronado":18.0,
+    "Maduro Mixto":20.0,
+    "Madurito":8.0,
+    "Alitas":20.0,
+    "Perro Especial":20.0,
+    "Perro Loco":20.0,
+    "Desgranado":25.0,
+    "Salsa Tártara": 3.0,
+    "Salsa de Piña": 3.0,
+    "Aji":3.0,
+    "Hogao": 3.0,
+    "Manzana Postobon":3.0,
+    "Colombiana":3.0,
+    "Coca Cola":3.0,
+    "Limonada de Panela":3.0
+  };
+
+  const guardado = localStorage.getItem("carritoHoneyFood");
+  if (guardado) cart.push(...JSON.parse(guardado));
+
+  const buscador = document.getElementById("buscador");
+  const cards = document.querySelectorAll(".product-card");
+  const cartItems = document.getElementById("cart-items");
+  const cartCount = document.getElementById("cart-count");
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+  // Menú móvil
+  window.toggleMobileMenu = () => {
+    document.getElementById("mobile-menu")?.classList.toggle("hidden");
+  };
+
+  // Hover blur entre tarjetas
+  cards.forEach(card => {
+    card.addEventListener("mouseenter", () => {
+      cards.forEach(other => { if (other !== card) other.classList.add("blurred"); });
+    });
+    card.addEventListener("mouseleave", () => {
+      cards.forEach(other => other.classList.remove("blurred"));
+    });
+  });
+
+  cards.forEach(card => {
+  card.addEventListener("click", e => {
+    const isFocused = card.classList.contains("focused");
+
+    // Quita enfoque de todas
+    cards.forEach(c => c.classList.remove("focused", "blurred"));
+
+    if (!isFocused) {
+      // Enfoca la tarjeta clickeada
+      card.classList.add("focused");
+
+      // Desenfoca las otras
+      cards.forEach(c => { if (c !== card) c.classList.add("blurred"); });
+    }
+
+    e.stopPropagation(); // evita que el click llegue al documento
+  });
+});
+
+// Click fuera de cualquier tarjeta quita enfoque
+document.addEventListener("click", () => {
+  cards.forEach(c => c.classList.remove("focused", "blurred"));
+});
+
+  // Filtro de búsqueda
+  buscador?.addEventListener("input", function () {
+    const termino = this.value.toLowerCase();
+    cards.forEach(card => {
+      const titulo = card.querySelector("h3")?.textContent.toLowerCase() || "";
+      const descripcion = card.querySelector("p")?.textContent.toLowerCase() || "";
+      card.style.display = (titulo.includes(termino) || descripcion.includes(termino)) ? "block" : "none";
+    });
+  });
+
+  // Variables para sodas
+  const sodaModal = document.getElementById("soda-modal");
+  const sodaButtons = document.querySelectorAll(".soda-option");
+  const closeSoda = document.querySelector(".close-soda");
+  let productoPendiente = null;
+
+  // Función principal para agregar al carrito
+  function agregarProducto(nombre){
+    const idx = cart.findIndex(item => item.nombre === nombre);
+    if (idx >= 0) cart[idx].cantidad++;
+    else cart.push({ nombre, cantidad: 1 });
+    actualizarCarrito();
+    mostrarToast(nombre, "agregado_carrito");
+  }
+
+  // Listener de botones "Agregar al carrito"
+  document.querySelectorAll(".add-to-cart").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const nombre = btn.dataset.product;
+      if(nombre === "Sodas"){
+        productoPendiente = nombre;
+        sodaModal.classList.remove("hidden");
+      } else {
+        agregarProducto(nombre);
+      }
+    });
+  });
+
+  // Selección de soda dentro del modal
+  sodaButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const sodaElegida = btn.dataset.soda;
+      sodaModal.classList.add("hidden");
+      productoPendiente = null;
+      agregarProducto(sodaElegida);
+    });
+  });
+
+  // Cerrar modal
+  closeSoda.addEventListener("click", () => {
+    sodaModal.classList.add("hidden");
+    productoPendiente = null;
+  });
+
+  function actualizarCarrito() {
+    cartItems.innerHTML = "";
+    let total = 0;
+    cart.forEach((item, i) => {
+      const precio = precios[item.nombre] ?? 0;
+      const subtotal = precio * item.cantidad;
+      total += subtotal;
+
+      const li = document.createElement("li");
+      li.className = "flex justify-between items-center bg-[#fff7ec] p-3 rounded shadow text-sm";
+      li.innerHTML = `
+        <div>
+          <span class="font-semibold">${item.nombre}</span><br>
+          <span class="text-xs text-orange-700">$${precio.toFixed(2)} c/u</span>
+        </div>
+        <div class="flex flex-col items-end text-xs">
+          <div class="flex items-center gap-1 mb-1">
+            <button onclick="cambiarCantidad(${i}, -1)" class="px-2 py-0.5 rounded bg-red-100 hover:bg-red-200 text-red-600 border border-red-300">–</button>
+            <span class="mx-1">${item.cantidad}</span>
+            <button onclick="cambiarCantidad(${i}, 1)" class="px-2 py-0.5 rounded bg-green-100 hover:bg-green-200 text-green-700 border border-green-300">+</button>
+          </div>
+          <span>Subtotal: $${subtotal.toFixed(2)}</span>
+          <button onclick="eliminarDelCarrito(${i})" class="text-white text-xs mt-1 px-2 py-1 rounded bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600">Eliminar</button>
+        </div>`;
+      cartItems.appendChild(li);
+    });
+
+    const totalDiv = document.createElement("div");
+    totalDiv.className = "mt-4 text-right font-bold text-orange-800 border-t pt-2";
+    totalDiv.textContent = `Total: $${total.toFixed(2)}`;
+    cartItems.appendChild(totalDiv);
+
+    cartCount.textContent = cart.reduce((sum, item) => sum + item.cantidad, 0);
+    localStorage.setItem("carritoHoneyFood", JSON.stringify(cart));
+  }
+
+  // Funciones globales
+  window.cambiarCantidad = (idx, delta) => {
+    cart[idx].cantidad += delta;
+    if (cart[idx].cantidad <= 0) cart.splice(idx, 1);
+    actualizarCarrito();
+  };
+
+  window.eliminarDelCarrito = idx => {
+    cart.splice(idx, 1);
+    actualizarCarrito();
+  };
+
+  window.vaciarCarrito = () => {
+    cart.length = 0;
+    localStorage.removeItem("carritoHoneyFood");
+    actualizarCarrito();
+    mostrarToast("Carrito vaciado");
+  };
+
+  window.enviarPedido = () => {
+    if (cart.length === 0) return mostrarToast("Tu carrito está vacío");
+    let total = 0;
+    const mensaje = "¡Hola! Quiero hacer un pedido:\n\n" + cart.map((item, i) => {
+      const precio = precios[item.nombre] ?? 0;
+      const subtotal = precio * item.cantidad;
+      total += subtotal;
+      return `${i + 1}. ${item.nombre} (x${item.cantidad}) - $${subtotal.toFixed(2)}`;
+    }).join("\n") + `\n\n🧾 Total: $${total.toFixed(2)}`;
+    window.open(`https://wa.me/16472951328?text=${encodeURIComponent(mensaje)}`, "_blank");
+    cart.length = 0;
+    localStorage.removeItem("carritoHoneyFood");
+    actualizarCarrito();
+    mostrarToast("Pedido enviado. Carrito reiniciado.");
+  };
+
+  window.abrirCarrito = () => {
+    const panel = document.getElementById("cart-panel");
+    panel?.classList.remove("hidden");
+    void panel.offsetWidth;
+    panel?.classList.add("visible");
+  };
+
+  window.cerrarCarrito = () => {
+    const panel = document.getElementById("cart-panel");
+    panel?.classList.remove("visible");
+    setTimeout(() => panel?.classList.add("hidden"), 300);
+  };
+
+  function mostrarToast(producto, keyI18) {
+    const toast = document.createElement("div");
+    toast.className = "toast";
+    const textoI18 = translations[currentLang][keyI18] || keyI18;
+    toast.innerText = `${producto} ${textoI18}`;
+    toast.style.bottom = `${30 + document.querySelectorAll(".toast").length * 70}px`;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.classList.add("visible"), 10);
+    setTimeout(() => {
+      toast.classList.remove("visible");
+      setTimeout(() => toast.remove(), 300);
+    }, 3000);
+  }
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollTopBtn.classList.add("visible");
+    } else {
+      scrollTopBtn.classList.remove("visible");
+    }
+  });
+
+  scrollTopBtn?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  actualizarCarrito();
+});
+</script>
+
+</body>
+</html>
