@@ -264,7 +264,7 @@
 
 <!-- Script principal -->
 <script>
-fetch('stock.json')
+fetch('stock.json?v=2')
   .then(res => res.json())
   .then(stock => {
     const buttons = document.querySelectorAll('.add-to-cart');
